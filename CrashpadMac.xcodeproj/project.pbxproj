@@ -282,6 +282,16 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/CrashpadMac/CrashpadMac\"";
+				OTHER_LDFLAGS = (
+					"-lbase",
+					"-lclient",
+					"-lhandler",
+					"-lminidump",
+					"-lsnapshot",
+					"-lutil",
+					"-lbsm",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.katekovanton.CrashpadMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -300,6 +310,16 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/CrashpadMac/CrashpadMac\"";
+				OTHER_LDFLAGS = (
+					"-lbase",
+					"-lclient",
+					"-lhandler",
+					"-lminidump",
+					"-lsnapshot",
+					"-lutil",
+					"-lbsm",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.katekovanton.CrashpadMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
