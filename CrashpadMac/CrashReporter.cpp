@@ -105,7 +105,7 @@ class ScopedPthreadAttrDestroy {
 };
 
 //! \brief Starts a Crashpad handler, possibly restarting it if it dies.
-class HandlerStarter final : public NotifyServer::DefaultInterface {
+class HandlerStarter final : public NotifyServer::Interface {
  public:
   ~HandlerStarter() {}
 
@@ -182,6 +182,29 @@ class HandlerStarter final : public NotifyServer::DefaultInterface {
   }
 
   // NotifyServer::DefaultInterface:
+    
+    kern_return_t DoMachNotifyPortDeleted(notify_port_t notify,
+                                          mach_port_name_t name,
+                                          const mach_msg_trailer_t* trailer) override {
+        return MIG_BAD_ID;
+    }
+
+    kern_return_t DoMachNotifyNoSenders(notify_port_t notify,
+                                        mach_port_mscount_t mscount,
+                                        const mach_msg_trailer_t* trailer) override {
+        return MIG_BAD_ID;
+    }
+
+    kern_return_t DoMachNotifySendOnce(notify_port_t notify,
+                                       const mach_msg_trailer_t* trailer) override {
+        return MIG_BAD_ID;
+    }
+
+    kern_return_t DoMachNotifyDeadName(notify_port_t notify,
+                                       mach_port_name_t name,
+                                       const mach_msg_trailer_t* trailer) override {
+        return MIG_BAD_ID;
+    }
 
   kern_return_t DoMachNotifyPortDestroyed(notify_port_t notify,
                                           mach_port_t rights,
@@ -214,7 +237,7 @@ class HandlerStarter final : public NotifyServer::DefaultInterface {
 
  private:
   HandlerStarter()
-      : NotifyServer::DefaultInterface(),
+      : NotifyServer::Interface(),
         handler_(),
         database_(),
         metrics_dir_(),
