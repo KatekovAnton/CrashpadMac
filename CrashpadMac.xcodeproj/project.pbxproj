@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		414F43DD240E851D00EAE13E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F43DC240E851D00EAE13E /* AppDelegate.m */; };
-		414F43E0240E851D00EAE13E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F43DF240E851D00EAE13E /* ViewController.m */; };
+		414F43E0240E851D00EAE13E /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 414F43DF240E851D00EAE13E /* ViewController.mm */; };
 		414F43E2240E851E00EAE13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414F43E1240E851E00EAE13E /* Assets.xcassets */; };
 		414F43E5240E851E00EAE13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414F43E3240E851E00EAE13E /* Main.storyboard */; };
 		414F43E8240E851E00EAE13E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F43E7240E851E00EAE13E /* main.m */; };
+		414F43F1240E868B00EAE13E /* Crasher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43EF240E868B00EAE13E /* Crasher.cpp */; };
+		414F43F4240E86AD00EAE13E /* CrashReporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43F2240E86AD00EAE13E /* CrashReporter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,12 +21,16 @@
 		414F43DB240E851D00EAE13E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		414F43DC240E851D00EAE13E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		414F43DE240E851D00EAE13E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		414F43DF240E851D00EAE13E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		414F43DF240E851D00EAE13E /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		414F43E1240E851E00EAE13E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		414F43E4240E851E00EAE13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		414F43E6240E851E00EAE13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		414F43E7240E851E00EAE13E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		414F43E9240E851E00EAE13E /* CrashpadMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrashpadMac.entitlements; sourceTree = "<group>"; };
+		414F43EF240E868B00EAE13E /* Crasher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Crasher.cpp; sourceTree = "<group>"; };
+		414F43F0240E868B00EAE13E /* Crasher.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Crasher.hpp; sourceTree = "<group>"; };
+		414F43F2240E86AD00EAE13E /* CrashReporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CrashReporter.cpp; sourceTree = "<group>"; };
+		414F43F3240E86AD00EAE13E /* CrashReporter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CrashReporter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +66,16 @@
 				414F43DB240E851D00EAE13E /* AppDelegate.h */,
 				414F43DC240E851D00EAE13E /* AppDelegate.m */,
 				414F43DE240E851D00EAE13E /* ViewController.h */,
-				414F43DF240E851D00EAE13E /* ViewController.m */,
+				414F43DF240E851D00EAE13E /* ViewController.mm */,
 				414F43E1240E851E00EAE13E /* Assets.xcassets */,
 				414F43E3240E851E00EAE13E /* Main.storyboard */,
 				414F43E6240E851E00EAE13E /* Info.plist */,
 				414F43E7240E851E00EAE13E /* main.m */,
 				414F43E9240E851E00EAE13E /* CrashpadMac.entitlements */,
+				414F43EF240E868B00EAE13E /* Crasher.cpp */,
+				414F43F0240E868B00EAE13E /* Crasher.hpp */,
+				414F43F2240E86AD00EAE13E /* CrashReporter.cpp */,
+				414F43F3240E86AD00EAE13E /* CrashReporter.hpp */,
 			);
 			path = CrashpadMac;
 			sourceTree = "<group>";
@@ -139,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414F43E0240E851D00EAE13E /* ViewController.m in Sources */,
+				414F43F1240E868B00EAE13E /* Crasher.cpp in Sources */,
+				414F43E0240E851D00EAE13E /* ViewController.mm in Sources */,
+				414F43F4240E86AD00EAE13E /* CrashReporter.cpp in Sources */,
 				414F43E8240E851E00EAE13E /* main.m in Sources */,
 				414F43DD240E851D00EAE13E /* AppDelegate.m in Sources */,
 			);
@@ -277,6 +289,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C85PE3Z934;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/CrashpadMac/CrashpadMac/include\"",
+					"\"$(SRCROOT)/CrashpadMac/CrashpadMac/include/third_party/mini_chromium/mini_chromium\"",
+				);
 				INFOPLIST_FILE = CrashpadMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +322,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C85PE3Z934;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/CrashpadMac/CrashpadMac/include\"",
+					"\"$(SRCROOT)/CrashpadMac/CrashpadMac/include/third_party/mini_chromium/mini_chromium\"",
+				);
 				INFOPLIST_FILE = CrashpadMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

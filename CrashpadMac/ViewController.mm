@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#include "Crasher.hpp"
+
 
 @implementation ViewController
 
@@ -21,6 +23,10 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+- (IBAction)onSimulateCrash:(id)sender {
+    Crasher::simulateCrash();
 }
 
 
