@@ -14,6 +14,8 @@
 		414F43E8240E851E00EAE13E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F43E7240E851E00EAE13E /* main.m */; };
 		414F43F1240E868B00EAE13E /* Crasher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43EF240E868B00EAE13E /* Crasher.cpp */; };
 		414F43F4240E86AD00EAE13E /* CrashReporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43F2240E86AD00EAE13E /* CrashReporter.cpp */; };
+		414F43FC240FD3B000EAE13E /* crashpad_handler in Resources */ = {isa = PBXBuildFile; fileRef = 414F43FB240FD3B000EAE13E /* crashpad_handler */; };
+		414F4401240FD43200EAE13E /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F4400240FD43200EAE13E /* FileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		414F43F0240E868B00EAE13E /* Crasher.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Crasher.hpp; sourceTree = "<group>"; };
 		414F43F2240E86AD00EAE13E /* CrashReporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CrashReporter.cpp; sourceTree = "<group>"; };
 		414F43F3240E86AD00EAE13E /* CrashReporter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CrashReporter.hpp; sourceTree = "<group>"; };
+		414F43FB240FD3B000EAE13E /* crashpad_handler */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = crashpad_handler; path = CrashpadMac/crashpad_handler; sourceTree = "<group>"; };
+		414F43FF240FD43200EAE13E /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		414F4400240FD43200EAE13E /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 		414F43DA240E851D00EAE13E /* CrashpadMac */ = {
 			isa = PBXGroup;
 			children = (
+				414F43FB240FD3B000EAE13E /* crashpad_handler */,
 				414F43DB240E851D00EAE13E /* AppDelegate.h */,
 				414F43DC240E851D00EAE13E /* AppDelegate.m */,
 				414F43DE240E851D00EAE13E /* ViewController.h */,
@@ -76,6 +82,8 @@
 				414F43F0240E868B00EAE13E /* Crasher.hpp */,
 				414F43F2240E86AD00EAE13E /* CrashReporter.cpp */,
 				414F43F3240E86AD00EAE13E /* CrashReporter.hpp */,
+				414F43FF240FD43200EAE13E /* FileManager.h */,
+				414F4400240FD43200EAE13E /* FileManager.m */,
 			);
 			path = CrashpadMac;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				414F43E2240E851E00EAE13E /* Assets.xcassets in Resources */,
+				414F43FC240FD3B000EAE13E /* crashpad_handler in Resources */,
 				414F43E5240E851E00EAE13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +163,7 @@
 				414F43F4240E86AD00EAE13E /* CrashReporter.cpp in Sources */,
 				414F43E8240E851E00EAE13E /* main.m in Sources */,
 				414F43DD240E851D00EAE13E /* AppDelegate.m in Sources */,
+				414F4401240FD43200EAE13E /* FileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
