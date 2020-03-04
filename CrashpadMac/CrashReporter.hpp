@@ -10,12 +10,14 @@
 #define CrashReporter_hpp
 
 #include <stdio.h>
+#include <string>
 
 
 
 class CrashReporter {
+    
 public:
-    CrashReporter();
+    static bool StartCrashReporter(const std::string &pathToCrashReport, const std::string &pathToCrashHandler);
     
 };
 
