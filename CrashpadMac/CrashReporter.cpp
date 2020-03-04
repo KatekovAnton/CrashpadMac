@@ -16,6 +16,8 @@
 #include <utility>
 
 #include "client/crashpad_client.h"
+#include "client/crash_report_database.h"
+#include "client/settings.h"
 #include "base/logging.h"
 #include "base/mac/mach_logging.h"
 #include "base/strings/stringprintf.h"
@@ -586,9 +588,23 @@ bool CrashReporter::StartCrashReporter(const std::string &pathToCrashReport, con
      */
     arguments.push_back("--no-rate-limit");
 #endif
+    
 
+    std::unique_ptr<crashpad::CrashReportDatabase> database =
+        crashpad::CrashReportDatabase::Initialize(filePathToCrashReport);
+    
+    if (database == nullptr || database->GetSettings() == NULL) {
+        return false;
+    }
+
+    /* Enable automated uploads. */
+    bool ok = database->GetSettings()->SetUploadsEnabled(true);
+//    if (!ok) { // always ok
+//        return false;
+//    }
+    
     // error
     // maybe this https://stackoverflow.com/questions/48438404/cant-call-ioutil-readdir-on-dev-fd-on-macos
     _client = new crashpad::CrashpadClient();
-    return _client->StartHandler(filePathToCrashHandler, filePathToCrashReport, base::FilePath(), url, annotations, arguments, false, false);
+    return _client->StartHandler(filePathToCrashHandler, filePathToCrashReport, filePathToCrashReport, url, annotations, arguments, false, false);
 }
