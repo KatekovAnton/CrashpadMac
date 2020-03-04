@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FileManager : NSObject
 
++ (NSString *)fileSavePathWithFileName:(NSString *)fileName;
++ (NSString *)fileBundlePathWithFileName:(NSString *)fileName;
+
 @end
 
 NS_ASSUME_NONNULL_END
