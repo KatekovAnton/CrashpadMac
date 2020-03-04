@@ -587,6 +587,8 @@ bool CrashReporter::StartCrashReporter(const std::string &pathToCrashReport, con
     arguments.push_back("--no-rate-limit");
 #endif
 
+    // error
+    // maybe this https://stackoverflow.com/questions/48438404/cant-call-ioutil-readdir-on-dev-fd-on-macos
     _client = new crashpad::CrashpadClient();
     return _client->StartHandler(filePathToCrashHandler, filePathToCrashReport, base::FilePath(), url, annotations, arguments, false, false);
 }
