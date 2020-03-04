@@ -565,8 +565,8 @@ bool CrashReporter::StartCrashReporter(const std::string &pathToCrashReport, con
     
     std::map<std::string, std::string> annotations;
     annotations["format"] = "minidump";        // Crashpad setting to save crash as a minidump
-    annotations["prod"].assign(CRASHED_APPNAME);            //  appName
-    annotations["ver"].assign(CRASHED_APPVERSION);    //  appVersion
+    annotations["prod"].assign(CRASHED_APPNAME);            // appName
+    annotations["ver"].assign(CRASHED_APPVERSION);    // appVersion
     annotations["key"] = "Sample key";            // Optional key field
     annotations["email"] = "smapleemail@gmail.com";    // Optional user email
     annotations["comments"] = "Sample comment";    // Optional crash description

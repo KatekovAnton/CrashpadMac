@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "FileManager.h"
+
 #include "Crasher.hpp"
+#include "CrashReporter.hpp"
+
 
 
 @implementation ViewController
@@ -16,6 +20,24 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    
+    NSString *crashReportFilePath = [FileManager fileSavePathWithFileName:@"crashReport.anton"];
+    std::string crashReportFilePathStr = std::string([crashReportFilePath UTF8String]);
+    NSString *crashhandlerFilePath = [FileManager fileBundlePathWithFileName:@"crashpad_handler"];
+    std::string crashhandlerFilePathStr = std::string([crashhandlerFilePath UTF8String]);
+    
+    bool success = CrashReporter::StartCrashReporter(crashReportFilePathStr, crashhandlerFilePathStr);
+    
+    _textCrashReport.stringValue = crashReportFilePath;
+    _textCrashHandler.stringValue = crashhandlerFilePath;
+    if (success) {
+        _textStartSuccess.stringValue = @"Start: success";
+    }
+    else {
+        _textStartSuccess.stringValue = @"Start: failed";
+    }
+    
+    
 }
 
 
