@@ -59,6 +59,9 @@ bool CrashReporter::StartCrashReporter(const std::string &pathToCrashReport, con
     base::FilePath filePathToCrashReport(pathToCrashReport);
     base::FilePath filePathToCrashHandler(pathToCrashHandler);
     
+    // Tutorial
+    // https://help.backtrace.io/en/articles/2337714-crashpad-integration-guide
+    
     std::vector<std::string> arguments;
 #if defined DEBUG
     /*
@@ -89,5 +92,11 @@ bool CrashReporter::StartCrashReporter(const std::string &pathToCrashReport, con
     // error
     // maybe this https://stackoverflow.com/questions/48438404/cant-call-ioutil-readdir-on-dev-fd-on-macos
     _client = new crashpad::CrashpadClient();
-    return _client->StartHandler(filePathToCrashHandler, filePathToCrashReport, filePathToCrashReport, url, annotations, arguments, false, false);
+    bool started = _client->StartHandler(filePathToCrashHandler, filePathToCrashReport, filePathToCrashReport, url, annotations, arguments, false, false);
+    if (!started) {
+        return false;
+    }
+    
+    return true;
+    
 }
