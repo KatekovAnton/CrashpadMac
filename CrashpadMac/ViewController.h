@@ -8,7 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController {
+    IBOutlet NSTextField *_textCrashHandler;
+    IBOutlet NSTextField *_textCrashReport;
+    IBOutlet NSTextField *_textStartSuccess;
+}
 
 
 @end
