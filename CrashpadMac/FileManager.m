@@ -35,7 +35,7 @@ NSString *applicationDataDirectory()
 
 + (NSString *)fileBundlePathWithFileName:(NSString *)fileName
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    NSString *filePath = [[NSBundle mainBundle] pathForAuxiliaryExecutable:fileName];
     return filePath;
 }
 

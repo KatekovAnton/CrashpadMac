@@ -14,9 +14,22 @@
 		414F43E8240E851E00EAE13E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F43E7240E851E00EAE13E /* main.m */; };
 		414F43F1240E868B00EAE13E /* Crasher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43EF240E868B00EAE13E /* Crasher.cpp */; };
 		414F43F4240E86AD00EAE13E /* CrashReporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F43F2240E86AD00EAE13E /* CrashReporter.cpp */; };
-		414F43FC240FD3B000EAE13E /* crashpad_handler in Resources */ = {isa = PBXBuildFile; fileRef = 414F43FB240FD3B000EAE13E /* crashpad_handler */; };
 		414F4401240FD43200EAE13E /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 414F4400240FD43200EAE13E /* FileManager.m */; };
+		414F44052411265400EAE13E /* crashpad_handler in CopyFiles */ = {isa = PBXBuildFile; fileRef = 414F43FB240FD3B000EAE13E /* crashpad_handler */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		414F44042411264D00EAE13E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				414F44052411265400EAE13E /* crashpad_handler in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		414F43D8240E851D00EAE13E /* CrashpadMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashpadMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +111,7 @@
 				414F43D4240E851D00EAE13E /* Sources */,
 				414F43D5240E851D00EAE13E /* Frameworks */,
 				414F43D6240E851D00EAE13E /* Resources */,
+				414F44042411264D00EAE13E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -146,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				414F43E2240E851E00EAE13E /* Assets.xcassets in Resources */,
-				414F43FC240FD3B000EAE13E /* crashpad_handler in Resources */,
 				414F43E5240E851E00EAE13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
